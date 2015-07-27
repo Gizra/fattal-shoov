@@ -1,0 +1,10 @@
+{
+  "name": "Behat tests for http://shoov.io",
+  "description": "Functional testing for http://shoov.io site.",
+  "require": {
+    "drupal/drupal-extension": "~3.0"
+  },
+  "config": {
+    "bin-dir": "bin/"
+  }
+}
