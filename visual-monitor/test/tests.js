@@ -41,7 +41,7 @@ var caps = selectedCaps ? capsConfig[selectedCaps] : undefined;
 var providerPrefix = process.env.PROVIDER_PREFIX ? process.env.PROVIDER_PREFIX + '-' : '';
 var testName = selectedCaps ? providerPrefix + selectedCaps : providerPrefix + 'default';
 
-var baseUrl = process.env.BASE_URL ? process.env.BASE_URL : 'http://shoov.io';
+var baseUrl = process.env.BASE_URL ? process.env.BASE_URL : 'http://www.fattal-alazman.co.il';
 
 describe('Visual monitor testing', function() {
 
@@ -59,12 +59,30 @@ describe('Visual monitor testing', function() {
   it('should show the home page',function(done) {
     client
       .url(baseUrl)
+      .click('#closeBTN')
       .webdrivercss(testName + '.homepage', {
         name: '1',
-        exclude: [],
-        remove: [],
-        screenWidth: selectedCaps == 'chrome' ? [320, 640, 960, 1200] : undefined,
-      }, shoovWebdrivercss.processResults)
+        exclude: [
+          // Dynamic deal content
+          '.hotelName',
+          '.forNights',
+          '.price',
+          '.totalPrice',
+          '.beforeDis',
+          '.precents',
+          '.hotelPic',
+          '.time-value',
+          '.liveDealsLeftRoom',
+
+          // Social counter
+          '.pluginCountNum',
+          '#aggregateCount',
+          '.pluginConnectButton',
+          '._2ph-'
+        ],
+        remove: []
+        //screenWidth: selectedCaps == 'chrome' ? [320, 640, 960, 1200] : undefined,
+      }, console.log())
       .call(done);
   });
 });
