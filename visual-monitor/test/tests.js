@@ -75,11 +75,9 @@ describe('Visual monitor testing', function() {
           '.roomsNum',
           '.roomsSoldNum',
           '#countdown_dashboard2',
-          '.html5gallery-car-mask-0',
-          '.html5gallery-box-0',
+          '#countdown_dashboard2  span > div',
           '.mainTextHolder p',
           '.mainTextHolder div',
-          '.textHolder',
 
 
           // Hotel details
@@ -104,7 +102,7 @@ describe('Visual monitor testing', function() {
         ],
         remove: [
           '.stickyFtr',
-
+          '.textHolder'
         ]
         //screenWidth: selectedCaps == 'chrome' ? [320, 640, 960, 1200] : undefined,
       }, console.log())
