@@ -58,29 +58,54 @@ describe('Visual monitor testing', function() {
 
   it('should show the home page',function(done) {
     client
-      .url(baseUrl)
+      .url(baseUrl + '/deal/leonardo_plaza_eilat_8210')
       .click('#closeBTN')
       .webdrivercss(testName + '.homepage', {
         name: '1',
         exclude: [
           // Dynamic deal content
-          '.hotelName',
-          '.forNights',
-          '.price',
+          '.content',
+          '.hotelLogo',
+          '.roomType',
+          '.date',
           '.totalPrice',
           '.beforeDis',
+          '.forNightsDealPage',
           '.precents',
-          '.hotelPic',
-          '.time-value',
-          '.liveDealsLeftRoom',
+          '.roomsNum',
+          '.roomsSoldNum',
+          '#countdown_dashboard2',
+          '.html5gallery-car-mask-0',
+          '.html5gallery-box-0',
+          '.mainTextHolder p',
+          '.mainTextHolder div',
+          '.textHolder',
+
+
+          // Hotel details
+          '.hotelNameBottom',
+          '.address',
+          '.phone',
+          '.email',
+          '.smallMap img',
+
+          // Other deals content
+          '.more0pportunityTitle',
+          '.more0pportunityImg',
+          '.totalPriceSide',
+
 
           // Social counter
-          '.pluginCountNum',
-          '#aggregateCount',
+          '.fbLike',
+          '.gPlus',
+          '.facebookFanBox',
           '.pluginConnectButton',
           '._2ph-'
         ],
-        remove: []
+        remove: [
+          '.stickyFtr',
+
+        ]
         //screenWidth: selectedCaps == 'chrome' ? [320, 640, 960, 1200] : undefined,
       }, console.log())
       .call(done);
